@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #0d121b; /* Warna latar belakang gelap */
+    --secondary-color: #161b22; /* Warna latar belakang sekunder */
+    --text-color: #e6edf3; /* Warna teks terang */
+    --highlight-color: #0977c0; /* Warna sorotan/biru neon */
+    --border-color: #2e2c33;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: var(--primary-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo h2 {
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--highlight-color);
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100vh;
+    padding: 0 8%;
+    padding-top: 80px; /* Jarak dari header */
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fdfdfd;
+    margin-bottom: 5px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.role-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--highlight-color);
+    font-weight: 600;
+}
+
+.description {
+    font-size: 1rem;
+    color: #fdfcfc;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    border: 2px solid var(--highlight-color);
+    border-radius: 50px;
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
+}
+
+.hero-image-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hexagon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-image-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: conic-gradient(from 0deg, var(--highlight-color), var(--highlight-color) 30%, transparent 60%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: -1;
+    filter: blur(20px);
+    animation: glow 5s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0.7;
+    }
+}
+
+/* Styling for the About Section */
+.about-section {
+    background-color: #0d121b; /* Warna latar belakang putih keabu-abuan */
+    color: #0977c0; /* Warna teks gelap */
+    padding: 100px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.about-content {
+    max-width: 450px;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.about-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #f8f7f7;
+}
+
+.experience-container {
+    display: flex;
+    gap: 60px;
+}
+
+.experience-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.job-item {
+    line-height: 1.4;
+}
+
+.job-year {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4b8df2; /* Warna biru untuk tahun */
+    margin-bottom: 5px;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #92abdf;
+    margin-bottom: 5px;
+}
+
+.job-description {
+    font-size: 0.9rem;
+    color: #fffbfb;
+}
+
+/* Styling for the Services Section */
+.services-section {
+    background-color: #0d121b;
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.services-header {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #015f9e;
+}
+
+.services-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #fcf9f9;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Memastikan tata letak responsif */
+}
+
+.service-card {
+    background-color: #1a202c;
+    padding: 40px 30px;
+    border: 1px solid #161b22;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 350px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #4582df; /* Warna ikon biru */
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1a202c;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #ffffff;
+}
+/* 
+    body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+/* .container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image-section {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    display: block;
+}
+
+.content-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #666;
+}
+
+.why-work-with-me, .design-tools, .development-skills {
+    margin-bottom: 30px;
+}
+
+.skill-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+
+/* Styling for the Contact Section */
+.contact-section {
+    background-color: #0d121b;
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.contact-header {
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #015f9e;
+}
+
+.contact-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f8f7f7;
+}
+
+.contact-description a {
+    color: #4b8df2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-description a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #4b8df2;
+    box-shadow: 0 0 0 3px rgba(75, 141, 242, 0.2);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.submit-btn {
+    padding: 15px 30px;
+    background-color: #4b8df2;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #3867d6;
+    transform: translateY(-2px);
+}
+
+
+/* Styling for the Footer */
+footer {
+    background-color: #24293e; /* Warna latar belakang gelap */
+    color: #b0b0b0;
+    padding: 50px 8%;
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0164f8; /* Warna latar belakang ikon biru */
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: #1b53d8; /* Warna biru yang lebih gelap saat di-hover */
+}
+
+.copyright,
+.distributed {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.distributed a {
+    color: #4b8df2;
+    text-decoration: none;
+    font-weight: 500;
+}
